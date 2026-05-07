@@ -74,8 +74,7 @@ function updateProgress() {
   document.getElementById("barFill").style.width = total
     ? (shown / total) * 100 + "%"
     : "0%";
-  document.getElementById("countLabel").textContent =
-    shown + " / " + total;
+  document.getElementById("countLabel").textContent = shown + " / " + total;
   document.getElementById("roundBadge").textContent = "Round " + round;
 }
 
@@ -101,6 +100,9 @@ function nextWord() {
     const wordText = document.getElementById("wordText");
     const hintLabel = document.getElementById("hintLabel");
     wordText.textContent = currentWord;
+    const len = currentWord.length;
+    wordText.style.fontSize =
+      len <= 6 ? "" : len <= 10 ? "36px" : len <= 14 ? "26px" : "20px";
     wordText.classList.add("concealed");
     hintLabel.classList.remove("hidden");
     card.classList.remove("hidden");
