@@ -276,3 +276,8 @@ function showError(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove("show"), 4000);
 }
+
+/* ── Listen Again ── */
+function listenAgain() {
+  if (currentWord) speak(currentWord);
+}
